@@ -1,12 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
-      steps {
-        git(url: 'https://github.com/yerabimzatov/cicd-pipeline.git', branch: 'main', credentialsId: '644ad482-ad4f-422c-89e8-03d9cf712837')
-      }
-    }
-
     stage('Build Application') {
       steps {
         sh 'chmod +x script/build.sh'
