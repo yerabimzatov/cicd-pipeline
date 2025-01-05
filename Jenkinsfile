@@ -9,6 +9,7 @@ pipeline {
 
     stage('Build Application') {
       steps {
+        sh 'chmod +x script/build.sh'
         sh 'scripts/build.sh'
       }
     }
