@@ -23,7 +23,7 @@ pipeline {
 
     stage('Docker Build') {
       steps {
-        sh 'docker build -t epam-app:latest .'
+        sh 'docker build -t rabimzatovepm/epam-app:latest .'
       }
     }
 
