@@ -31,7 +31,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('https://registry.hub.docker.com', '483923d8-1310-4f7d-a364-45fe66ab518e') {
-            docker.image('epam-app').push('latest')
+            docker.image('rabimzatovepm/epam-app').push('latest')
           }
         }
 
