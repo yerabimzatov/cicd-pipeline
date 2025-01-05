@@ -29,11 +29,16 @@ pipeline {
 
     stage('Docker Push') {
       steps {
-        sh '''withCredentials([usernamePassword(credentialsId: \'483923d8-1310-4f7d-a364-45fe66ab518e\', usernameVariable: \'DOCKER_USER\', passwordVariable: \'DOCKER_PASS\')]) {
-sh "docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
-sh "docker push ${DOCKER_USER}/my-image:latest"}'''
-        }
+        sh '''withCredentials([usernamePassword(credentialsId: \'483923d8-1310-4f7d-a364-45fe66ab518e\', 
+                                   usernameVariable: \'DOCKER_USER\', 
+                                   passwordVariable: \'DOCKER_PASS\')]) {
+    // Ensure each command is on a separate line
+    sh "docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
+    sh "docker push ${DOCKER_USER}/my-image:latest"
+}
+'''
       }
-
     }
+
   }
+}
