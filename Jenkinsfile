@@ -9,13 +9,13 @@ pipeline {
 
     stage('Build Application') {
       steps {
-        sh 'sh \'scripts/build.sh\''
+        sh 'scripts/build.sh'
       }
     }
 
     stage('Run Tests') {
       steps {
-        sh 'sh \'scripts/test.sh\''
+        sh 'scripts/test.sh'
       }
     }
 
