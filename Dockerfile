@@ -1,5 +1,5 @@
-FROM node:7.8.0
+FROM node:14-alpine
 WORKDIR /opt
-ADD . /opt
-RUN npm install
-ENTRYPOINT npm run start
+COPY . /opt
+RUN npm install --production && rm -rf /opt/.npm  # Install only production dependencies and clean npm cache
+ENTRYPOINT ["npm", "run", "start"]
