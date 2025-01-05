@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git 'https://github.com/yerabimzatov/cicd-pipeline.git'
+        git(url: 'https://github.com/yerabimzatov/cicd-pipeline.git', branch: 'main')
       }
     }
 
