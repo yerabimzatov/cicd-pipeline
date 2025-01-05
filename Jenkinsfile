@@ -27,5 +27,14 @@ pipeline {
       }
     }
 
+    stage('Docker Push') {
+      steps {
+        sh '''DOCKER_USERNAME = \'rabimzatovepm\'
+DOCKER_PASSWORD = \'Qan74108520+\''''
+        sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+        sh 'docker push rabimzatovepm/epam-image:latest'
+      }
+    }
+
   }
 }
